@@ -44,7 +44,7 @@
         .links a.linkedin { background-color: #0077b5; }
         .links a.linkedin:hover { background-color: #005582; }
 
-        /* تنسيقات معرض الأعمال */
+        /* تنسيقات الأقسام والبطاقات */
         .section-title {
             font-size: 20px; font-weight: 600; margin-bottom: 20px; text-align: left;
             border-bottom: 2px solid #eee; padding-bottom: 10px;
@@ -58,10 +58,16 @@
         }
         .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #1a1a1a; }
         .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #666; }
+        
+        /* تنسيقات الشارات (Badges) */
         .badge {
-            display: inline-block; padding: 4px 8px; background: #eef2ff; color: #4f46e5;
-            border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
+            display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
         }
+        .badge-finance { background: #fff3cd; color: #856404; } /* ذهبي للمالي */
+        .badge-aws { background: #d1ecf1; color: #0c5460; } /* أزرق للسحابة */
+        .badge-tech { background: #eef2ff; color: #4f46e5; } /* بنفسجي للتقني */
+        .badge-eco { background: #d4edda; color: #155724; } /* أخضر للاقتصاد */
+
         .project-link {
             font-size: 14px; color: #0077b5; text-decoration: none; font-weight: bold;
         }
@@ -84,19 +90,40 @@
         </div>
     </div>
 
+    <!-- قسم الشهادات المعتمدة (الجديد) -->
+    <div class="projects-section">
+        <h2 class="section-title">Professional Certifications</h2>
+        
+        <div class="project-card">
+            <span class="badge badge-finance">Finance</span>
+            <h3>Certified Financial Analyst (CFA)</h3>
+            <p>Comprehensive understanding of financial analysis, investment strategies, and economic modeling to drive financial decision-making.</p>
+            <!-- إذا كان لديك رابط للشهادة، ضعه هنا -->
+            <a href="#" class="project-link">Verify Credential &rarr;</a>
+        </div>
+
+        <div class="project-card">
+            <span class="badge badge-aws">Cloud / Tech</span>
+            <h3>AWS Certified: Cloud Practitioner / Infrastructure</h3>
+            <p>Foundational expertise in Amazon Web Services (AWS) Cloud concepts, security, architecture, and core infrastructure services.</p>
+            <!-- إذا كان لديك رابط للشهادة، ضعه هنا -->
+            <a href="#" class="project-link">Verify Credential &rarr;</a>
+        </div>
+    </div>
+
     <!-- قسم إثبات المفهوم (Proof of Concept) -->
     <div class="projects-section">
         <h2 class="section-title">Proof of Concept</h2>
         
         <div class="project-card">
-            <span class="badge">Data / Tech</span>
+            <span class="badge badge-tech">Data / Tech</span>
             <h3>Automated Data Extraction Script</h3>
             <p>Developed a Python-based proof of concept to scrape economic indicators from public databases, clean the data, and visualize trends. Demonstrates ability to bridge raw data and actionable insights.</p>
             <a href="#" class="project-link">View Code on GitHub &rarr;</a>
         </div>
         
         <div class="project-card">
-            <span class="badge">Economics / Human Sciences</span>
+            <span class="badge badge-eco">Economics / Human Sciences</span>
             <h3>Market Sentiment Analysis Model</h3>
             <p>An experimental script that analyzes text data to gauge public sentiment regarding inflation, showcasing a practical application of interdisciplinary research (Economics + NLP).</p>
             <a href="#" class="project-link">Read Concept &rarr;</a>
@@ -108,15 +135,14 @@
         <h2 class="section-title">Portfolio & Projects</h2>
         
         <div class="project-card">
-            <span class="badge">Web / Design</span>
+            <span class="badge badge-tech">Web / Design</span>
             <h3>Personal Digital Portfolio (This Site)</h3>
             <p>Designed and deployed a lightweight, secure, and fully responsive static website using HTML/CSS and GitHub Pages. Engineered for high performance and privacy.</p>
             <a href="https://muntadharsabaa.github.io/" class="project-link">Live Site &rarr;</a>
         </div>
         
-        <!-- يمكنك تكرار هذا الكارت لأي مشروع جديد -->
         <div class="project-card">
-            <span class="badge">Strategy / Analysis</span>
+            <span class="badge badge-eco">Strategy / Analysis</span>
             <h3>Interdisciplinary Research Paper</h3>
             <p>A comprehensive analysis of how modern technology impacts traditional economic models in developing nations. (Placeholder: Replace with your actual research/analysis).</p>
             <a href="#" class="project-link">Read Summary &rarr;</a>
