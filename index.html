@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- تاغ التحقق من جوجل -->
     <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
-    
     <title>Muntadhar Al-Sabaa | Portfolio</title>
     <style>
         body {
@@ -16,15 +14,15 @@
             color: #1a1a1a;
             margin: 0;
         }
-        .container {
+        .container, .projects-section {
             background: #ffffff;
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            max-width: 600px;
-            margin: auto;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
         }
-        img {
+        img.profile-pic {
             width: 160px;
             height: 160px;
             border-radius: 50%;
@@ -33,52 +31,48 @@
             border: 3px solid #eaeaea;
             margin-bottom: 24px;
         }
-        h1 {
-            margin: 0 0 8px 0;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-        h2 {
-            margin: 0 0 20px 0;
-            font-size: 15px;
-            font-weight: 500;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        p {
-            color: #444;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
+        h1 { margin: 0 0 8px 0; font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
+        h2 { margin: 0 0 20px 0; font-size: 15px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        p { color: #444; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        
+        .links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .links a {
-            padding: 12px 24px;
-            background-color: #1a1a1a;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            font-size: 14px;
-            transition: background-color 0.2s;
+            padding: 12px 24px; background-color: #1a1a1a; color: white; text-decoration: none;
+            border-radius: 6px; font-weight: 500; font-size: 14px; transition: background-color 0.2s;
         }
-        .links a:hover {
-            background-color: #444444;
-        }
+        .links a:hover { background-color: #444444; }
         .links a.linkedin { background-color: #0077b5; }
         .links a.linkedin:hover { background-color: #005582; }
+
+        /* تنسيقات معرض الأعمال */
+        .section-title {
+            font-size: 20px; font-weight: 600; margin-bottom: 20px; text-align: left;
+            border-bottom: 2px solid #eee; padding-bottom: 10px;
+        }
+        .project-card {
+            border: 1px solid #eaeaea; padding: 20px; border-radius: 8px; margin-bottom: 20px;
+            text-align: left; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #1a1a1a; }
+        .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #666; }
+        .badge {
+            display: inline-block; padding: 4px 8px; background: #eef2ff; color: #4f46e5;
+            border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
+        }
+        .project-link {
+            font-size: 14px; color: #0077b5; text-decoration: none; font-weight: bold;
+        }
+        .project-link:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
+
+    <!-- القسم الشخصي -->
     <div class="container">
-        <img src="profile.jpg" alt="Muntadhar Al-Sabaa">
+        <img src="profile.jpg" alt="Muntadhar Al-Sabaa" class="profile-pic">
         <h1>Muntadhar Al-Sabaa</h1>
         <h2>Tech • Economics • Human Sciences</h2>
         <p>Interdisciplinary strategist bridging the gap between technology, economics, and knowledge sciences. I build solutions that drive tangible value, optimize systems, and create impactful results for forward-thinking entities.</p>
@@ -89,5 +83,45 @@
             <a href="mailto:fixer.intl.hq@gmail.com">Contact Me</a>
         </div>
     </div>
+
+    <!-- قسم إثبات المفهوم (Proof of Concept) -->
+    <div class="projects-section">
+        <h2 class="section-title">Proof of Concept</h2>
+        
+        <div class="project-card">
+            <span class="badge">Data / Tech</span>
+            <h3>Automated Data Extraction Script</h3>
+            <p>Developed a Python-based proof of concept to scrape economic indicators from public databases, clean the data, and visualize trends. Demonstrates ability to bridge raw data and actionable insights.</p>
+            <a href="#" class="project-link">View Code on GitHub &rarr;</a>
+        </div>
+        
+        <div class="project-card">
+            <span class="badge">Economics / Human Sciences</span>
+            <h3>Market Sentiment Analysis Model</h3>
+            <p>An experimental script that analyzes text data to gauge public sentiment regarding inflation, showcasing a practical application of interdisciplinary research (Economics + NLP).</p>
+            <a href="#" class="project-link">Read Concept &rarr;</a>
+        </div>
+    </div>
+
+    <!-- قسم معرض الأعمال (Portfolio) -->
+    <div class="projects-section">
+        <h2 class="section-title">Portfolio & Projects</h2>
+        
+        <div class="project-card">
+            <span class="badge">Web / Design</span>
+            <h3>Personal Digital Portfolio (This Site)</h3>
+            <p>Designed and deployed a lightweight, secure, and fully responsive static website using HTML/CSS and GitHub Pages. Engineered for high performance and privacy.</p>
+            <a href="https://muntadharsabaa.github.io/" class="project-link">Live Site &rarr;</a>
+        </div>
+        
+        <!-- يمكنك تكرار هذا الكارت لأي مشروع جديد -->
+        <div class="project-card">
+            <span class="badge">Strategy / Analysis</span>
+            <h3>Interdisciplinary Research Paper</h3>
+            <p>A comprehensive analysis of how modern technology impacts traditional economic models in developing nations. (Placeholder: Replace with your actual research/analysis).</p>
+            <a href="#" class="project-link">Read Summary &rarr;</a>
+        </div>
+    </div>
+
 </body>
 </html>
