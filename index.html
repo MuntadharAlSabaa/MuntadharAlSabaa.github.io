@@ -6,72 +6,154 @@
     <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
     <title>Muntadhar Al-Sabaa | Portfolio</title>
     <style>
+        /* حركة الخلفية */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* حركة الظهور من الأسفل */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             text-align: center;
-            background-color: #f9f9fb;
+            background: linear-gradient(135deg, #f9f9fb, #eef2f5, #f4f4f9);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             padding: 50px 20px;
             color: #1a1a1a;
             margin: 0;
+            overflow-x: hidden;
         }
+
         .container, .projects-section {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.95);
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             max-width: 700px;
             margin: 0 auto 30px auto;
+            backdrop-filter: blur(10px);
+            /* تطبيق حركة الظهور */
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
         }
+
+        /* تأخير ظهور الأقسام تدريجياً */
+        .container { animation-delay: 0.1s; }
+        .projects-section:nth-of-type(1) { animation-delay: 0.3s; }
+        .projects-section:nth-of-type(2) { animation-delay: 0.5s; }
+
         img.profile-pic {
             width: 160px;
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
-            border: 3px solid #eaeaea;
+            border: 4px solid #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
             margin-bottom: 24px;
+            transition: transform 0.3s ease;
         }
-        h1 { margin: 0 0 8px 0; font-size: 28px; font-weight: 600; letter-spacing: -0.5px; }
-        h2 { margin: 0 0 20px 0; font-size: 15px; font-weight: 500; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+
+        img.profile-pic:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        h1 { margin: 0 0 8px 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        
+        h2 { 
+            margin: 0 0 20px 0; 
+            font-size: 15px; 
+            font-weight: 600; 
+            color: #555; 
+            text-transform: uppercase; 
+            letter-spacing: 2px;
+            height: 20px; /* لثبات المساحة أثناء تأثير الكتابة */
+        }
+
+        /* مؤشر الكتابة */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: #555;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
         p { color: #444; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
         
         .links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        
         .links a {
             padding: 12px 24px; background-color: #1a1a1a; color: white; text-decoration: none;
-            border-radius: 6px; font-weight: 500; font-size: 14px; transition: background-color 0.2s;
+            border-radius: 8px; font-weight: 500; font-size: 14px; 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        .links a:hover { background-color: #444444; }
+        
+        .links a:hover { 
+            background-color: #444444; 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
         .links a.linkedin { background-color: #0077b5; }
         .links a.linkedin:hover { background-color: #005582; }
 
-        /* تنسيقات الأقسام والبطاقات */
         .section-title {
-            font-size: 20px; font-weight: 600; margin-bottom: 20px; text-align: left;
-            border-bottom: 2px solid #eee; padding-bottom: 10px;
+            font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: left;
+            border-bottom: 2px solid #eee; padding-bottom: 10px; color: #111;
         }
+
         .project-card {
-            border: 1px solid #eaeaea; padding: 20px; border-radius: 8px; margin-bottom: 20px;
-            text-align: left; transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #eaeaea; padding: 20px; border-radius: 12px; margin-bottom: 20px;
+            text-align: left; background: #fff;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* شريط جانبي يظهر عند التحويم */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; height: 100%; width: 4px;
+            background: #0077b5;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom;
+        }
+
         .project-card:hover {
-            transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            border-color: transparent;
         }
+
+        .project-card:hover::before {
+            transform: scaleY(1);
+        }
+
         .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #1a1a1a; }
         .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #666; }
         
-        /* تنسيقات الشارات (Badges) */
         .badge {
             display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
         }
-        .badge-finance { background: #fff3cd; color: #856404; } /* ذهبي للمالي */
-        .badge-aws { background: #d1ecf1; color: #0c5460; } /* أزرق للسحابة */
-        .badge-tech { background: #eef2ff; color: #4f46e5; } /* بنفسجي للتقني */
-        .badge-eco { background: #d4edda; color: #155724; } /* أخضر للاقتصاد */
+        .badge-tech { background: #eef2ff; color: #4f46e5; }
+        .badge-eco { background: #d4edda; color: #155724; }
 
         .project-link {
             font-size: 14px; color: #0077b5; text-decoration: none; font-weight: bold;
+            transition: color 0.2s;
         }
-        .project-link:hover { text-decoration: underline; }
+        .project-link:hover { color: #005582; text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -80,34 +162,13 @@
     <div class="container">
         <img src="profile.jpg" alt="Muntadhar Al-Sabaa" class="profile-pic">
         <h1>Muntadhar Al-Sabaa</h1>
-        <h2>Tech • Economics • Human Sciences</h2>
+        <h2><span id="typing-text"></span><span class="cursor"></span></h2>
         <p>Interdisciplinary strategist bridging the gap between technology, economics, and knowledge sciences. I build solutions that drive tangible value, optimize systems, and create impactful results for forward-thinking entities.</p>
 
         <div class="links">
             <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">LinkedIn</a>
             <a href="https://github.com/MuntadharAlSabaa" target="_blank">GitHub</a>
             <a href="mailto:fixer.intl.hq@gmail.com">Contact Me</a>
-        </div>
-    </div>
-
-    <!-- قسم الشهادات المعتمدة (الجديد) -->
-    <div class="projects-section">
-        <h2 class="section-title">Professional Certifications</h2>
-        
-        <div class="project-card">
-            <span class="badge badge-finance">Finance</span>
-            <h3>Certified Financial Analyst (CFA)</h3>
-            <p>Comprehensive understanding of financial analysis, investment strategies, and economic modeling to drive financial decision-making.</p>
-            <!-- إذا كان لديك رابط للشهادة، ضعه هنا -->
-            <a href="#" class="project-link">Verify Credential &rarr;</a>
-        </div>
-
-        <div class="project-card">
-            <span class="badge badge-aws">Cloud / Tech</span>
-            <h3>AWS Certified: Cloud Practitioner / Infrastructure</h3>
-            <p>Foundational expertise in Amazon Web Services (AWS) Cloud concepts, security, architecture, and core infrastructure services.</p>
-            <!-- إذا كان لديك رابط للشهادة، ضعه هنا -->
-            <a href="#" class="project-link">Verify Credential &rarr;</a>
         </div>
     </div>
 
@@ -149,5 +210,24 @@
         </div>
     </div>
 
+    <!-- كود الجافا سكربت لتأثير الكتابة -->
+    <script>
+        const text = "Tech • Economics • Human Sciences";
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100); // سرعة الكتابة (100 ملي ثانية لكل حرف)
+            }
+        }
+
+        // بدء تأثير الكتابة بعد ثانية واحدة من فتح الصفحة
+        window.onload = function() {
+            setTimeout(typeWriter, 1000);
+        };
+    </script>
 </body>
 </html>
