@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- تاغ التحقق من جوجل -->
-    <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muntadhar Al-Sabaa | Portfolio</title>
+    <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
+    <title>Muntadhar Al-Sabaa | Portfolio & Services</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -22,7 +20,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             max-width: 600px;
-            margin: auto;
+            margin: 0 auto 30px auto;
         }
         img {
             width: 160px;
@@ -59,7 +57,7 @@
             gap: 12px;
             flex-wrap: wrap;
         }
-        .links a {
+        .links a, .pay-btn {
             padding: 12px 24px;
             background-color: #1a1a1a;
             color: white;
@@ -68,15 +66,67 @@
             font-weight: 500;
             font-size: 14px;
             transition: background-color 0.2s;
+            border: none;
+            cursor: pointer;
         }
-        .links a:hover {
+        .links a:hover, .pay-btn:hover {
             background-color: #444444;
         }
         .links a.linkedin { background-color: #0077b5; }
         .links a.linkedin:hover { background-color: #005582; }
+        
+        /* تنسيق قسم الخدمات */
+        .services-section {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            max-width: 600px;
+            margin: auto;
+        }
+        .service-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .service-card h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .service-card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+        .price {
+            font-weight: bold;
+            color: #1a1a1a;
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .crypto-btn {
+            background-color: #f3ba2f; /* لون Binance/USDT */
+            color: #1a1a1a;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .crypto-btn:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
+
+    <!-- قسم البطاقة الشخصية -->
     <div class="container">
         <img src="profile.jpg" alt="Muntadhar Al-Sabaa">
         <h1>Muntadhar Al-Sabaa</h1>
@@ -89,5 +139,32 @@
             <a href="mailto:fixer.intl.hq@gmail.com">Contact Me</a>
         </div>
     </div>
+
+    <!-- قسم الخدمات والدفع -->
+    <div class="services-section">
+        <h2>Exclusive Services</h2>
+        <p style="font-size: 14px; margin-bottom: 20px;">Pay securely with Credit Card (Visa/Mastercard) or Crypto. Funds are instantly converted to USDT.</p>
+        
+        <div class="service-card">
+            <h3>Tech & Data Consultation</h3>
+            <p>1-hour deep dive into your tech stack, data architecture, or economic strategy. Includes a written summary report.</p>
+            <span class="price">$150.00 USD</span>
+            <!-- ضع رابط الدفع الخاص بك في href أدناه -->
+            <button class="crypto-btn" onclick="window.location.href='https://buy.transak.com/'">
+                Pay with Card / Crypto
+            </button>
+        </div>
+
+        <div class="service-card">
+            <h3>Custom Scripting / Automation</h3>
+            <p>Small-scale Python or JavaScript automation task, web scraping, or API integration.</p>
+            <span class="price">$250.00 USD</span>
+            <!-- ضع رابط الدفع الخاص بك في href أدناه -->
+            <button class="crypto-btn" onclick="window.location.href='https://buy.transak.com/'">
+                Pay with Card / Crypto
+            </button>
+        </div>
+    </div>
+
 </body>
 </html>
