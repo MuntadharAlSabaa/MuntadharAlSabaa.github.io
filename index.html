@@ -4,50 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
-    <title>Muntadhar Al-Sabaa | Portfolio</title>
+    <title>Muntadhar Al-Sabaa | Modern Applied Polymath</title>
     <style>
-        /* حركة الخلفية */
+        /* ألوان ملكية دموية */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* حركة الظهور من الأسفل */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Georgia', serif; /* خط كلاسيكي فخم */
             text-align: center;
-            background: linear-gradient(135deg, #f9f9fb, #eef2f5, #f4f4f9);
+            background: linear-gradient(135deg, #050505, #1a0000, #0a0a0a);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             padding: 50px 20px;
-            color: #1a1a1a;
+            color: #e0e0e0;
             margin: 0;
             overflow-x: hidden;
         }
 
         .container, .projects-section {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(15, 15, 15, 0.95);
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15), inset 0 0 0 1px #330000;
             max-width: 700px;
             margin: 0 auto 30px auto;
             backdrop-filter: blur(10px);
-            /* تطبيق حركة الظهور */
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        /* تأخير ظهور الأقسام تدريجياً */
         .container { animation-delay: 0.1s; }
         .projects-section:nth-of-type(1) { animation-delay: 0.3s; }
         .projects-section:nth-of-type(2) { animation-delay: 0.5s; }
+        .projects-section:nth-of-type(3) { animation-delay: 0.7s; }
 
         img.profile-pic {
             width: 160px;
@@ -55,8 +53,8 @@
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
-            border: 4px solid #fff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #8a0303; /* إطار دموي */
+            box-shadow: 0 8px 20px rgba(138, 3, 3, 0.5);
             margin-bottom: 24px;
             transition: transform 0.3s ease;
         }
@@ -65,66 +63,86 @@
             transform: scale(1.05) rotate(2deg);
         }
 
-        h1 { margin: 0 0 8px 0; font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+        h1 { 
+            margin: 0 0 8px 0; 
+            font-size: 32px; 
+            font-weight: bold; 
+            letter-spacing: 1px; 
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
         
         h2 { 
             margin: 0 0 20px 0; 
-            font-size: 15px; 
+            font-size: 14px; 
             font-weight: 600; 
-            color: #555; 
+            color: #d4af37; /* لون ذهبي ملكي */
             text-transform: uppercase; 
-            letter-spacing: 2px;
-            height: 20px; /* لثبات المساحة أثناء تأثير الكتابة */
+            letter-spacing: 3px;
+            height: 20px; 
         }
 
-        /* مؤشر الكتابة */
         .cursor {
             display: inline-block;
             width: 2px;
-            background-color: #555;
+            background-color: #d4af37;
             animation: blink 0.7s infinite;
         }
         @keyframes blink { 50% { opacity: 0; } }
 
-        p { color: #444; font-size: 16px; line-height: 1.6; margin-bottom: 30px; }
+        p { color: #b0b0b0; font-size: 16px; line-height: 1.8; margin-bottom: 30px; }
         
         .links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         
         .links a {
-            padding: 12px 24px; background-color: #1a1a1a; color: white; text-decoration: none;
-            border-radius: 8px; font-weight: 500; font-size: 14px; 
+            padding: 12px 24px; 
+            background-color: #1a0000; 
+            color: #d4af37; 
+            text-decoration: none;
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 14px; 
+            border: 1px solid #8a0303;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
         }
         
         .links a:hover { 
-            background-color: #444444; 
+            background-color: #8a0303; 
+            color: #ffffff;
             transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(138, 3, 3, 0.6);
         }
-        
-        .links a.linkedin { background-color: #0077b5; }
-        .links a.linkedin:hover { background-color: #005582; }
 
         .section-title {
-            font-size: 20px; font-weight: 700; margin-bottom: 20px; text-align: left;
-            border-bottom: 2px solid #eee; padding-bottom: 10px; color: #111;
+            font-size: 20px; 
+            font-weight: bold; 
+            margin-bottom: 20px; 
+            text-align: left;
+            border-bottom: 1px solid #330000; 
+            padding-bottom: 10px; 
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .project-card {
-            border: 1px solid #eaeaea; padding: 20px; border-radius: 12px; margin-bottom: 20px;
-            text-align: left; background: #fff;
+            border: 1px solid #330000; 
+            padding: 25px; 
+            border-radius: 12px; 
+            margin-bottom: 20px;
+            text-align: left; 
+            background: #0a0a0a;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        /* شريط جانبي يظهر عند التحويم */
         .project-card::before {
             content: '';
             position: absolute;
             left: 0; top: 0; height: 100%; width: 4px;
-            background: #0077b5;
+            background: #8a0303;
             transform: scaleY(0);
             transition: transform 0.3s ease;
             transform-origin: bottom;
@@ -132,28 +150,28 @@
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-            border-color: transparent;
+            box-shadow: 0 12px 24px rgba(138, 3, 3, 0.2);
+            border-color: #8a0303;
         }
 
         .project-card:hover::before {
             transform: scaleY(1);
         }
 
-        .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #1a1a1a; }
-        .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #666; }
+        .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #ffffff; }
+        .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #999; }
         
         .badge {
             display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
         }
-        .badge-tech { background: #eef2ff; color: #4f46e5; }
-        .badge-eco { background: #d4edda; color: #155724; }
+        .badge-tech { background: #1a0000; color: #ff4d4d; border: 1px solid #8a0303; }
+        .badge-eco { background: #1a1500; color: #d4af37; border: 1px solid #665200; }
 
         .project-link {
-            font-size: 14px; color: #0077b5; text-decoration: none; font-weight: bold;
+            font-size: 14px; color: #d4af37; text-decoration: none; font-weight: bold;
             transition: color 0.2s;
         }
-        .project-link:hover { color: #005582; text-decoration: underline; }
+        .project-link:hover { color: #ffffff; text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -163,12 +181,24 @@
         <img src="profile.jpg" alt="Muntadhar Al-Sabaa" class="profile-pic">
         <h1>Muntadhar Al-Sabaa</h1>
         <h2><span id="typing-text"></span><span class="cursor"></span></h2>
-        <p>Interdisciplinary strategist bridging the gap between technology, economics, and knowledge sciences. I build solutions that drive tangible value, optimize systems, and create impactful results for forward-thinking entities.</p>
+        <p>A Modern Applied Polymath bridging the gap between technology, economics, and knowledge sciences. I design systems, optimize strategies, and build tangible solutions that drive impactful results for forward-thinking entities.</p>
 
         <div class="links">
             <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">LinkedIn</a>
             <a href="https://github.com/MuntadharAlSabaa" target="_blank">GitHub</a>
             <a href="mailto:fixer.intl.hq@gmail.com">Contact Me</a>
+        </div>
+    </div>
+
+    <!-- قسم المقالات والرؤى (جديد) -->
+    <div class="projects-section">
+        <h2 class="section-title">Insights & Manifesto</h2>
+        
+        <div class="project-card">
+            <span class="badge badge-tech">Manifesto</span>
+            <h3>The Age of the Self-Directed Polymath</h3>
+            <p>Why relying on traditional institutions is no longer the only path to success. A deep dive into how self-directed learning, technology, and decentralized systems empower the modern individual.</p>
+            <a href="#" class="project-link">Read Article &rarr;</a>
         </div>
     </div>
 
@@ -212,7 +242,7 @@
 
     <!-- كود الجافا سكربت لتأثير الكتابة -->
     <script>
-        const text = "Tech • Economics • Human Sciences";
+        const text = "Modern Applied Polymath • Tech • Economics • Human Sciences";
         const typingElement = document.getElementById("typing-text");
         let index = 0;
 
@@ -220,13 +250,12 @@
             if (index < text.length) {
                 typingElement.innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeWriter, 100); // سرعة الكتابة (100 ملي ثانية لكل حرف)
+                setTimeout(typeWriter, 80); 
             }
         }
 
-        // بدء تأثير الكتابة بعد ثانية واحدة من فتح الصفحة
         window.onload = function() {
-            setTimeout(typeWriter, 1000);
+            setTimeout(typeWriter, 500);
         };
     </script>
 </body>
