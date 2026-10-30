@@ -1,0 +1,48 @@
+# إعدادات الوسائط (الصور والملفات)
+media: "media"
+
+# تعريف أنواع المحتوى التي يمكنك إدارتها
+content:
+  # النوع الأول: المقالات (Insights)
+  - name: "insights"
+    label: "مقالات ورؤى"
+    type: "collection"
+    path: "content/insights" # المسار الذي ستُحفظ فيه المقالات
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        label: "عنوان المقال"
+        type: "string"
+        required: true
+      - name: "description"
+        label: "وصف قصير"
+        type: "text"
+      - name: "body"
+        label: "محتوى المقال"
+        type: "rich-text"
+      - name: "date"
+        label: "تاريخ النشر"
+        type: "date"
+
+  # النوع الثاني: المشاريع (Projects)
+  - name: "projects"
+    label: "المشاريع"
+    type: "collection"
+    path: "content/projects" # المسار الذي ستُحفظ فيه المشاريع
+    create: true
+    delete: true
+    fields:
+      - name: "title"
+        label: "اسم المشروع"
+        type: "string"
+        required: true
+      - name: "description"
+        label: "وصف المشروع"
+        type: "text"
+      - name: "link"
+        label: "رابط المشروع"
+        type: "string"
+      - name: "image"
+        label: "صورة المشروع"
+        type: "image"
