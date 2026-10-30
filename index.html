@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
-    <title>Muntadhar Al-Sabaa | Modern Applied Polymath</title>
+    <title>منتظر مهدي حبيب السبع | موسوعي تطبيقي حديث</title>
     <style>
-        /* ألوان ملكية دموية */
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         body {
-            font-family: 'Georgia', serif; /* خط كلاسيكي فخم */
+            font-family: 'Tajawal', sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #050505, #1a0000, #0a0a0a);
+            background: linear-gradient(135deg, #0a0a0a, #1a0000, #0a0a0a);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             padding: 50px 20px;
@@ -46,6 +46,7 @@
         .projects-section:nth-of-type(1) { animation-delay: 0.3s; }
         .projects-section:nth-of-type(2) { animation-delay: 0.5s; }
         .projects-section:nth-of-type(3) { animation-delay: 0.7s; }
+        .projects-section:nth-of-type(4) { animation-delay: 0.9s; }
 
         img.profile-pic {
             width: 160px;
@@ -53,12 +54,11 @@
             border-radius: 50%;
             object-fit: cover;
             object-position: center 20%;
-            border: 4px solid #8a0303; /* إطار دموي */
+            border: 4px solid #8a0303;
             box-shadow: 0 8px 20px rgba(138, 3, 3, 0.5);
             margin-bottom: 24px;
             transition: transform 0.3s ease;
         }
-
         img.profile-pic:hover {
             transform: scale(1.05) rotate(2deg);
         }
@@ -66,20 +66,19 @@
         h1 { 
             margin: 0 0 8px 0; 
             font-size: 32px; 
-            font-weight: bold; 
-            letter-spacing: 1px; 
+            font-weight: 900; 
+            letter-spacing: 0.5px; 
             color: #ffffff;
             text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
         }
         
         h2 { 
             margin: 0 0 20px 0; 
-            font-size: 14px; 
-            font-weight: 600; 
-            color: #d4af37; /* لون ذهبي ملكي */
-            text-transform: uppercase; 
-            letter-spacing: 3px;
-            height: 20px; 
+            font-size: 16px; 
+            font-weight: 700; 
+            color: #d4af37;
+            letter-spacing: 1px;
+            height: 24px; 
         }
 
         .cursor {
@@ -100,7 +99,7 @@
             color: #d4af37; 
             text-decoration: none;
             border-radius: 8px; 
-            font-weight: bold; 
+            font-weight: 700; 
             font-size: 14px; 
             border: 1px solid #8a0303;
             transition: all 0.3s ease;
@@ -115,15 +114,14 @@
         }
 
         .section-title {
-            font-size: 20px; 
-            font-weight: bold; 
+            font-size: 22px; 
+            font-weight: 900; 
             margin-bottom: 20px; 
-            text-align: left;
+            text-align: right;
             border-bottom: 1px solid #330000; 
             padding-bottom: 10px; 
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .project-card {
@@ -131,7 +129,7 @@
             padding: 25px; 
             border-radius: 12px; 
             margin-bottom: 20px;
-            text-align: left; 
+            text-align: right; 
             background: #0a0a0a;
             transition: all 0.3s ease;
             position: relative;
@@ -141,7 +139,7 @@
         .project-card::before {
             content: '';
             position: absolute;
-            left: 0; top: 0; height: 100%; width: 4px;
+            right: 0; top: 0; height: 100%; width: 4px;
             background: #8a0303;
             transform: scaleY(0);
             transition: transform 0.3s ease;
@@ -166,6 +164,7 @@
         }
         .badge-tech { background: #1a0000; color: #ff4d4d; border: 1px solid #8a0303; }
         .badge-eco { background: #1a1500; color: #d4af37; border: 1px solid #665200; }
+        .badge-fin { background: #0a1a0a; color: #4dff4d; border: 1px solid #036603; }
 
         .project-link {
             font-size: 14px; color: #d4af37; text-decoration: none; font-weight: bold;
@@ -178,71 +177,91 @@
 
     <!-- القسم الشخصي -->
     <div class="container">
-        <img src="profile.jpg" alt="Muntadhar Al-Sabaa" class="profile-pic">
-        <h1>Muntadhar Al-Sabaa</h1>
+        <img src="profile.jpg" alt="منتظر مهدي حبيب السبع" class="profile-pic">
+        <h1>منتظر مهدي حبيب السبع</h1>
         <h2><span id="typing-text"></span><span class="cursor"></span></h2>
-        <p>A Modern Applied Polymath bridging the gap between technology, economics, and knowledge sciences. I design systems, optimize strategies, and build tangible solutions that drive impactful results for forward-thinking entities.</p>
+        <p>موسوعي تطبيقي حديث، ومهندس أنظمة شمولية. أوظّف التقنية المتقدمة، والاقتصاد، والعلوم الإنسانية لبناء حلول مبتكرة تحقق قيمة ملموسة، وتُحسّن الأنظمة، وتُنتج نتائج مؤثرة للكيانات الطموحة.</p>
 
         <div class="links">
-            <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">LinkedIn</a>
-            <a href="https://github.com/MuntadharAlSabaa" target="_blank">GitHub</a>
-            <a href="mailto:fixer.intl.hq@gmail.com">Contact Me</a>
+            <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">لينكد إن</a>
+            <a href="https://github.com/MuntadharAlSabaa" target="_blank">جيت هاب</a>
+            <a href="mailto:fixer.intl.hq@gmail.com">تواصل معي</a>
         </div>
     </div>
 
-    <!-- قسم المقالات والرؤى (جديد) -->
+    <!-- قسم الحلول المالية (جديد) -->
     <div class="projects-section">
-        <h2 class="section-title">Insights & Manifesto</h2>
+        <h2 class="section-title">الحلول المالية</h2>
+        <p style="text-align: right; font-size: 14px; color: #999; margin-bottom: 20px;">خيارات مالية تجريبية عبر مصرف العراق الأول (FIB):</p>
         
         <div class="project-card">
-            <span class="badge badge-tech">Manifesto</span>
-            <h3>The Age of the Self-Directed Polymath</h3>
-            <p>Why relying on traditional institutions is no longer the only path to success. A deep dive into how self-directed learning, technology, and decentralized systems empower the modern individual.</p>
-            <a href="#" class="project-link">Read Article &rarr;</a>
+            <span class="badge badge-fin">مصرفي</span>
+            <h3>الحوالات الفورية</h3>
+            <p>تحويلات فورية بين حسابات مصرف العراق الأول، مع إمكانية التحويل بين الدينار العراقي والدولار واليورو.</p>
+            <a href="https://fib.iq" class="project-link" target="_blank">زيارة الموقع &larr;</a>
+        </div>
+        
+        <div class="project-card">
+            <span class="badge badge-fin">مصرفي</span>
+            <h3>الدفع عبر رمز الاستجابة السريعة (QR)</h3>
+            <p>دفعات سريعة وآمنة عبر تطبيق FIB باستخدام رمز QR، لتسهيل المعاملات اليومية.</p>
+            <a href="https://fib.iq" class="project-link" target="_blank">زيارة الموقع &larr;</a>
         </div>
     </div>
 
-    <!-- قسم إثبات المفهوم (Proof of Concept) -->
+    <!-- قسم الرؤى والبيان -->
     <div class="projects-section">
-        <h2 class="section-title">Proof of Concept</h2>
+        <h2 class="section-title">رؤى وبيان</h2>
         
         <div class="project-card">
-            <span class="badge badge-tech">Data / Tech</span>
-            <h3>Automated Data Extraction Script</h3>
-            <p>Developed a Python-based proof of concept to scrape economic indicators from public databases, clean the data, and visualize trends. Demonstrates ability to bridge raw data and actionable insights.</p>
-            <a href="#" class="project-link">View Code on GitHub &rarr;</a>
-        </div>
-        
-        <div class="project-card">
-            <span class="badge badge-eco">Economics / Human Sciences</span>
-            <h3>Market Sentiment Analysis Model</h3>
-            <p>An experimental script that analyzes text data to gauge public sentiment regarding inflation, showcasing a practical application of interdisciplinary research (Economics + NLP).</p>
-            <a href="#" class="project-link">Read Concept &rarr;</a>
+            <span class="badge badge-eco">بيان</span>
+            <h3>عصر الموسوعي الذاتي التوجيه</h3>
+            <p>لماذا لم يعد الاعتماد على المؤسسات التقليدية هو المسار الوحيد للنجاح. تحليل عميق لكيفية تمكين التعلم الذاتي والتقنية والأنظمة اللامركزية للفرد الحديث.</p>
+            <a href="#" class="project-link">اقرأ المقال &larr;</a>
         </div>
     </div>
 
-    <!-- قسم معرض الأعمال (Portfolio) -->
+    <!-- قسم إثبات المفهوم -->
     <div class="projects-section">
-        <h2 class="section-title">Portfolio & Projects</h2>
+        <h2 class="section-title">إثبات المفهوم</h2>
         
         <div class="project-card">
-            <span class="badge badge-tech">Web / Design</span>
-            <h3>Personal Digital Portfolio (This Site)</h3>
-            <p>Designed and deployed a lightweight, secure, and fully responsive static website using HTML/CSS and GitHub Pages. Engineered for high performance and privacy.</p>
-            <a href="https://muntadharsabaa.github.io/" class="project-link">Live Site &rarr;</a>
+            <span class="badge badge-tech">بيانات / تقنية</span>
+            <h3>نص برمجي لاستخراج البيانات الآلي</h3>
+            <p>تطوير إثبات مفهوم قائم على لغة بايثون لاستخراج المؤشرات الاقتصادية من قواعد البيانات العامة، وتنظيفها، وتصور الاتجاهات. يُظهر القدرة على الربط بين البيانات الخام والرؤى القابلة للتنفيذ.</p>
+            <a href="#" class="project-link">عرض الكود على جيت هاب &larr;</a>
         </div>
         
         <div class="project-card">
-            <span class="badge badge-eco">Strategy / Analysis</span>
-            <h3>Interdisciplinary Research Paper</h3>
-            <p>A comprehensive analysis of how modern technology impacts traditional economic models in developing nations. (Placeholder: Replace with your actual research/analysis).</p>
-            <a href="#" class="project-link">Read Summary &rarr;</a>
+            <span class="badge badge-eco">اقتصاد / علوم إنسانية</span>
+            <h3>نموذج تحليل المشاعر السوقية</h3>
+            <p>نص برمجي تجريبي يحلل البيانات النصية لقياس المشاعر العامة تجاه التضخم، مما يعرض تطبيقاً عملياً للبحوث متعددة التخصصات (اقتصاد + معالجة اللغة الطبيعية).</p>
+            <a href="#" class="project-link">اقرأ المفهوم &larr;</a>
+        </div>
+    </div>
+
+    <!-- قسم معرض الأعمال -->
+    <div class="projects-section">
+        <h2 class="section-title">معرض الأعمال والمشاريع</h2>
+        
+        <div class="project-card">
+            <span class="badge badge-tech">ويب / تصميم</span>
+            <h3>الملف الرقمي الشخصي (هذا الموقع)</h3>
+            <p>تصميم ونشر موقع ويب ثابت خفيف الوزن وآمن ومتجاوب بالكامل باستخدام HTML/CSS وصفحات GitHub. مصمم للأداء العالي والخصوصية.</p>
+            <a href="https://muntadharalsabaa.github.io/" class="project-link">الموقع المباشر &larr;</a>
+        </div>
+        
+        <div class="project-card">
+            <span class="badge badge-eco">استراتيجية / تحليل</span>
+            <h3>ورقة بحثية متعددة التخصصات</h3>
+            <p>تحليل شامل لكيفية تأثير التقنية الحديثة على النماذج الاقتصادية التقليدية في الدول النامية. (عنصر نائب: استبدله ببحثك أو تحليلك الفعلي).</p>
+            <a href="#" class="project-link">اقرأ الملخص &larr;</a>
         </div>
     </div>
 
     <!-- كود الجافا سكربت لتأثير الكتابة -->
     <script>
-        const text = "Modern Applied Polymath • Tech • Economics • Human Sciences";
+        const text = "موسوعي تطبيقي حديث • تقنية • اقتصاد • علوم إنسانية";
         const typingElement = document.getElementById("typing-text");
         let index = 0;
 
