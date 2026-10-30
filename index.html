@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="nkes0Ui-ahm192JDqacj1Im8Q_x6-ueoDt3QJRdpk4w" />
+    
+    <!-- كود الأيقونة (Favicon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <title>مُنْتَظَر السَّبْع | موسوعي تطبيقي حديث</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
@@ -25,29 +28,57 @@
             background: linear-gradient(135deg, #0a0a0a, #1a0000, #0a0a0a);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            padding: 50px 20px;
+            padding: 40px 20px;
             color: #e0e0e0;
             margin: 0;
             overflow-x: hidden;
         }
 
-        .container, .projects-section {
+        /* الحاوية الرئيسية للشاشات الكبيرة */
+        .main-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* القسم الشخصي (يبقى في المنتصف) */
+        .profile-container {
             background: rgba(15, 15, 15, 0.95);
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15), inset 0 0 0 1px #330000;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
             backdrop-filter: blur(10px);
             opacity: 0;
             animation: fadeInUp 0.8s ease-out forwards;
         }
 
-        .container { animation-delay: 0.1s; }
-        .projects-section:nth-of-type(1) { animation-delay: 0.3s; }
-        .projects-section:nth-of-type(2) { animation-delay: 0.5s; }
-        .projects-section:nth-of-type(3) { animation-delay: 0.7s; }
-        .projects-section:nth-of-type(4) { animation-delay: 0.9s; }
+        /* نظام الشبكة (Grid) للأقسام الأخرى */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            align-items: start;
+        }
+
+        .projects-section {
+            background: rgba(15, 15, 15, 0.95);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15), inset 0 0 0 1px #330000;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+            text-align: right;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        /* تأخير الظهور */
+        .projects-section:nth-child(1) { animation-delay: 0.2s; }
+        .projects-section:nth-child(2) { animation-delay: 0.4s; }
+        .projects-section:nth-child(3) { animation-delay: 0.6s; }
+        .projects-section:nth-child(4) { animation-delay: 0.8s; }
 
         img.profile-pic {
             width: 160px;
@@ -90,7 +121,7 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
 
-        p { color: #b0b0b0; font-size: 16px; line-height: 1.8; margin-bottom: 30px; }
+        p { color: #b0b0b0; font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
         
         .links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         
@@ -115,7 +146,7 @@
         }
 
         .section-title {
-            font-size: 22px; 
+            font-size: 20px; 
             font-weight: 900; 
             margin-bottom: 20px; 
             text-align: right;
@@ -127,9 +158,9 @@
 
         .project-card {
             border: 1px solid #330000; 
-            padding: 25px; 
+            padding: 20px; 
             border-radius: 12px; 
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: right; 
             background: #0a0a0a;
             transition: all 0.3s ease;
@@ -148,7 +179,7 @@
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateX(-5px); /* حركة لليسار لأن الاتجاه عربي */
             box-shadow: 0 12px 24px rgba(138, 3, 3, 0.2);
             border-color: #8a0303;
         }
@@ -157,8 +188,8 @@
             transform: scaleY(1);
         }
 
-        .project-card h3 { margin: 0 0 10px 0; font-size: 18px; color: #ffffff; }
-        .project-card p { margin: 0 0 15px 0; font-size: 14px; color: #999; }
+        .project-card h3 { margin: 0 0 10px 0; font-size: 17px; color: #ffffff; }
+        .project-card p { margin: 0 0 10px 0; font-size: 14px; color: #999; }
         
         .badge {
             display: inline-block; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; margin-bottom: 10px;
@@ -172,95 +203,109 @@
             transition: color 0.2s;
         }
         .project-link:hover { color: #ffffff; text-decoration: underline; }
+
+        /* تصغير الخطوط والشبكة في الموبايل */
+        @media (max-width: 600px) {
+            .grid-layout { grid-template-columns: 1fr; gap: 20px; }
+            h1 { font-size: 26px; }
+            .profile-container { padding: 20px; }
+            .projects-section { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- القسم الشخصي -->
-    <div class="container">
-        <img src="profile.jpg" alt="مُنْتَظَر السَّبْع" class="profile-pic">
-        <h1>مُنْتَظَر السَّبْع</h1>
-        <h2><span id="typing-text"></span><span class="cursor"></span></h2>
-        <p>موسوعي تطبيقي حديث، ومهندس أنظمة شمولية. أوظّف التقنية المتقدمة، والاقتصاد، والعلوم الإنسانية لبناء حلول مبتكرة تحقق قيمة ملموسة، وتُحسّن الأنظمة، وتُنتج نتائج مؤثرة للكيانات الطموحة.</p>
+    <div class="main-wrapper">
+        <!-- القسم الشخصي -->
+        <div class="profile-container">
+            <img src="profile.jpg" alt="مُنْتَظَر السَّبْع" class="profile-pic">
+            <h1>مُنْتَظَر السَّبْع</h1>
+            <h2><span id="typing-text"></span><span class="cursor"></span></h2>
+            <p>موسوعي تطبيقي حديث، ومهندس أنظمة شمولية. أوظّف التقنية المتقدمة، والاقتصاد، والعلوم الإنسانية لبناء حلول مبتكرة تحقق قيمة ملموسة، وتُحسّن الأنظمة، وتُنتج نتائج مؤثرة للكيانات الطموحة.</p>
 
-        <div class="links">
-            <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">لينكد إن</a>
-            <a href="https://github.com/MuntadharAlSabaa" target="_blank">جيت هاب</a>
-            <a href="mailto:fixer.intl.hq@gmail.com">تواصل معي</a>
-        </div>
-    </div>
-
-    <!-- قسم الحلول المالية -->
-    <div class="projects-section">
-        <h2 class="section-title">الحلول المالية والدفع</h2>
-        <p style="text-align: right; font-size: 14px; color: #999; margin-bottom: 20px;">خيارات مالية تجريبية لتسهيل المعاملات المحلية والدولية:</p>
-        
-        <div class="project-card">
-            <span class="badge badge-fin">محلي</span>
-            <h3>المحافظ الإلكترونية المحلية</h3>
-            <p>دعم الدفع واستلام المبالغ عبر أشهر المحافظ في العراق مثل (زين كاش) و (كي كارد)، لتسهيل المعاملات اليومية.</p>
-        </div>
-        
-        <div class="project-card">
-            <span class="badge badge-fin">دولي</span>
-            <h3>الحوالات المالية الدولية</h3>
-            <p>إمكانية استلام الحوالات من خارج العراق عبر شبكات التحويل العالمية مثل (ويسترن يونيون) وغيرها من الطرق المعتمدة.</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/fixer-intl-bb539a421/" target="_blank">لينكد إن</a>
+                <a href="https://github.com/MuntadharAlSabaa" target="_blank">جيت هاب</a>
+                <a href="mailto:fixer.intl.hq@gmail.com">تواصل معي</a>
+            </div>
         </div>
 
-        <div class="project-card">
-            <span class="badge badge-fin">مصرفي</span>
-            <h3>الخدمات المصرفية الرقمية</h3>
-            <p>تكامل مع الخدمات المصرفية الحديثة (مثل مصرف العراق الأول) لإجراء الحوالات الفورية والدفع عبر رموز الاستجابة السريعة (QR).</p>
-        </div>
-    </div>
+        <!-- الشبكة (Grid) التي تحتوي على الأقسام -->
+        <div class="grid-layout">
+            
+            <!-- قسم الحلول المالية -->
+            <div class="projects-section">
+                <h2 class="section-title">الحلول المالية</h2>
+                
+                <div class="project-card">
+                    <span class="badge badge-fin">محلي</span>
+                    <h3>المحافظ الإلكترونية</h3>
+                    <p>دعم الدفع واستلام المبالغ عبر (زين كاش) و (كي كارد)، لتسهيل المعاملات اليومية.</p>
+                </div>
+                
+                <div class="project-card">
+                    <span class="badge badge-fin">دولي</span>
+                    <h3>الحوالات الدولية</h3>
+                    <p>إمكانية استلام الحوالات من خارج العراق عبر شبكات التحويل العالمية مثل (ويسترن يونيون) وغيرها.</p>
+                </div>
 
-    <!-- قسم الرؤى والبيان -->
-    <div class="projects-section">
-        <h2 class="section-title">رؤى وبيان</h2>
-        
-        <div class="project-card">
-            <span class="badge badge-eco">بيان</span>
-            <h3>عصر الموسوعي الذاتي التوجيه</h3>
-            <p>لماذا لم يعد الاعتماد على المؤسسات التقليدية هو المسار الوحيد للنجاح. تحليل عميق لكيفية تمكين التعلم الذاتي والتقنية والأنظمة اللامركزية للفرد الحديث.</p>
-            <a href="#" class="project-link">اقرأ المقال &larr;</a>
-        </div>
-    </div>
+                <div class="project-card">
+                    <span class="badge badge-fin">مصرفي</span>
+                    <h3>الخدمات المصرفية</h3>
+                    <p>تكامل مع الخدمات الحديثة لإجراء الحوالات الفورية والدفع عبر رمز QR.</p>
+                </div>
+            </div>
 
-    <!-- قسم إثبات المفهوم -->
-    <div class="projects-section">
-        <h2 class="section-title">إثبات المفهوم</h2>
-        
-        <div class="project-card">
-            <span class="badge badge-tech">بيانات / تقنية</span>
-            <h3>نص برمجي لاستخراج البيانات الآلي</h3>
-            <p>تطوير إثبات مفهوم قائم على لغة بايثون لاستخراج المؤشرات الاقتصادية من قواعد البيانات العامة، وتنظيفها، وتصور الاتجاهات. يُظهر القدرة على الربط بين البيانات الخام والرؤى القابلة للتنفيذ.</p>
-            <a href="#" class="project-link">عرض الكود على جيت هاب &larr;</a>
-        </div>
-        
-        <div class="project-card">
-            <span class="badge badge-eco">اقتصاد / علوم إنسانية</span>
-            <h3>نموذج تحليل المشاعر السوقية</h3>
-            <p>نص برمجي تجريبي يحلل البيانات النصية لقياس المشاعر العامة تجاه التضخم، مما يعرض تطبيقاً عملياً للبحوث متعددة التخصصات (اقتصاد + معالجة اللغة الطبيعية).</p>
-            <a href="#" class="project-link">اقرأ المفهوم &larr;</a>
-        </div>
-    </div>
+            <!-- قسم الرؤى والبيان -->
+            <div class="projects-section">
+                <h2 class="section-title">رؤى وبيان</h2>
+                
+                <div class="project-card">
+                    <span class="badge badge-eco">بيان</span>
+                    <h3>عصر الموسوعي الذاتي التوجيه</h3>
+                    <p>لماذا لم يعد الاعتماد على المؤسسات التقليدية هو المسار الوحيد للنجاح. تحليل عميق لكيفية تمكين التعلم الذاتي والتقنية للفرد الحديث.</p>
+                    <a href="#" class="project-link">اقرأ المقال &larr;</a>
+                </div>
+            </div>
 
-    <!-- قسم معرض الأعمال -->
-    <div class="projects-section">
-        <h2 class="section-title">معرض الأعمال والمشاريع</h2>
-        
-        <div class="project-card">
-            <span class="badge badge-tech">ويب / تصميم</span>
-            <h3>الملف الرقمي الشخصي (هذا الموقع)</h3>
-            <p>تصميم ونشر موقع ويب ثابت خفيف الوزن وآمن ومتجاوب بالكامل باستخدام HTML/CSS وصفحات GitHub. مصمم للأداء العالي والخصوصية.</p>
-            <a href="https://muntadharalsabaa.github.io/" class="project-link">الموقع المباشر &larr;</a>
-        </div>
-        
-        <div class="project-card">
-            <span class="badge badge-eco">استراتيجية / تحليل</span>
-            <h3>ورقة بحثية متعددة التخصصات</h3>
-            <p>تحليل شامل لكيفية تأثير التقنية الحديثة على النماذج الاقتصادية التقليدية في الدول النامية. (عنصر نائب: استبدله ببحثك أو تحليلك الفعلي).</p>
-            <a href="#" class="project-link">اقرأ الملخص &larr;</a>
+            <!-- قسم إثبات المفهوم -->
+            <div class="projects-section">
+                <h2 class="section-title">إثبات المفهوم</h2>
+                
+                <div class="project-card">
+                    <span class="badge badge-tech">بيانات / تقنية</span>
+                    <h3>نص برمجي لاستخراج البيانات</h3>
+                    <p>تطوير إثبات مفهوم قائم على لغة بايثون لاستخراج المؤشرات الاقتصادية وتنظيفها وتصور الاتجاهات.</p>
+                    <a href="#" class="project-link">عرض الكود &larr;</a>
+                </div>
+                
+                <div class="project-card">
+                    <span class="badge badge-eco">اقتصاد / علوم</span>
+                    <h3>نموذج تحليل المشاعر</h3>
+                    <p>نص برمجي تجريبي يحلل البيانات النصية لقياس المشاعر العامة تجاه التضخم (اقتصاد + معالجة اللغة).</p>
+                    <a href="#" class="project-link">اقرأ المفهوم &larr;</a>
+                </div>
+            </div>
+
+            <!-- قسم معرض الأعمال -->
+            <div class="projects-section">
+                <h2 class="section-title">معرض الأعمال</h2>
+                
+                <div class="project-card">
+                    <span class="badge badge-tech">ويب / تصميم</span>
+                    <h3>الملف الرقمي الشخصي</h3>
+                    <p>تصميم ونشر موقع ويب ثابت خفيف الوزن وآمن ومتجاوب بالكامل باستخدام HTML/CSS وصفحات GitHub.</p>
+                    <a href="https://muntadharalsabaa.github.io/" class="project-link">الموقع المباشر &larr;</a>
+                </div>
+                
+                <div class="project-card">
+                    <span class="badge badge-eco">استراتيجية</span>
+                    <h3>ورقة بحثية متعددة التخصصات</h3>
+                    <p>تحليل شامل لكيفية تأثير التقنية الحديثة على النماذج الاقتصادية التقليدية في الدول النامية.</p>
+                    <a href="#" class="project-link">اقرأ الملخص &larr;</a>
+                </div>
+            </div>
+
         </div>
     </div>
 
